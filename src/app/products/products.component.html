@@ -1,0 +1,23 @@
+
+<p-toast></p-toast>
+<div class="container">
+  <div class="row">
+    <div *ngIf="products$ | async as products">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of products">
+        <div class="card mb-5 shadow-6" style="width: 18rem; height: 20rem">
+          <img class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <h5>{{ product.price }}</h5>
+            <a href="#" class="btn btn-primary" (click)="printError()"
+              >Go somewhere</a
+            >
+          </div>
+        </div>
+      </div>
+      <h4 *ngIf="products.length === 0">The List is Empty</h4>
+    </div>
+  </div>
+</div>
+
